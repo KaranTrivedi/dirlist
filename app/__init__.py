@@ -3,8 +3,8 @@ import logging
 import os
 from fastapi import FastAPI
 
-from main.routers.views import root_router
-from main.routers.shows.views import shows_router
+from app.routers.views import root_router
+from app.routers.shows.views import shows_router
 
 #Define config and logger.
 CONFIG = configparser.ConfigParser()

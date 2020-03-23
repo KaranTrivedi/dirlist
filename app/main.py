@@ -1,4 +1,4 @@
-from main import create_root_app
+from app import create_root_app
 # import uvicorn
 
 app = create_root_app()
