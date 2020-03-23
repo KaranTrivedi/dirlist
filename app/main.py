@@ -1,5 +1,4 @@
 from app import create_root_app
-# import uvicorn
 
 app = create_root_app()
 

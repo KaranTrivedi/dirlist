@@ -14,9 +14,11 @@ PATH = CONFIG[SECTION]["path"]
 
 logging.basicConfig(filename=CONFIG[SECTION]['log'],
                     level=CONFIG[SECTION]['level'],
-                    format='%(asctime)s::%(name)s::%(funcName)s::%(levelname)s::%(message)s',
+                    # format='%(asctime)s::%(name)s::%(funcName)s::%(levelname)s::%(message)s',
+                    format="[%(asctime)s.%(msecs)03d][%(levelname)s][PID:%(process)d][%(filename)s][%(funcName)s]"
+	                "[%(lineno)s][%(name)s] - %(message)s",
                     datefmt='%Y-%m-%d %H:%M:%S')
-logger = logging.getLogger(SECTION)
+logger = logging.getLogger(__name__)
 
 def add_routes(app: FastAPI):
     logger.info("Mounting routes")

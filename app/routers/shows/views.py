@@ -26,7 +26,7 @@ CONFIG.read('/projects/dirlist/conf/config.ini')
 SECTION = 'dirlist'
 PATH = CONFIG[SECTION]["path"]
 
-logger = getLogger(__name__)
+logger = getLogger("dirlist")
 
 # app.mount("/files", StaticFiles(directory="/shows"), name="shows")
 
@@ -39,6 +39,7 @@ async def get_shows(q: List[str] = Query(None)):
 
     results = {}
 
+    logger.info("test")
     query_items = {"q": q}
     if query_items["q"]:
         entry = PATH + "/".join(query_items["q"])
